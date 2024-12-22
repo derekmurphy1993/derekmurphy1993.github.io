@@ -54,16 +54,16 @@ function App() {
 							{" "}
 							If you would prefer a more modern webpage expierence, CLICK HERE{" "}
 						</p>
-						<ul className="flex flex-row gap-8 font-bold mt-6">
+						<ul className="flex flex-row gap-8 font-bold mt-6 justify-center items-center">
 							<li
 								onClick={() => scrollToElement("about")}
-								className="px-3 bg-gradient-to-br from-red-200 via-red-600 to-red-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
+								className="px-3 py-3 bg-gradient-to-br from-red-200 via-red-600 to-red-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
 							>
-								Who Is Derek Murphy? <br /> (About Me)
+								About Me
 							</li>
 							<li
 								onClick={() => scrollToElement("portfolio")}
-								className="px-3 bg-gradient-to-br from-orange-200 via-orange-600 to-orange-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
+								className="px-3 py-3 bg-gradient-to-br from-orange-200 via-orange-600 to-orange-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
 							>
 								Portfolio
 							</li>
@@ -71,7 +71,7 @@ function App() {
 								onClick={() =>
 									window.open("https://github.com/derekmurphy1993", "_blank")
 								}
-								className="px-3 bg-gradient-to-br from-green-200 via-green-600 to-green-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
+								className="px-3 py-3 bg-gradient-to-br from-green-200 via-green-600 to-green-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
 							>
 								Github
 							</li>
@@ -82,7 +82,7 @@ function App() {
 										"_blank"
 									)
 								}
-								className="px-3 bg-gradient-to-br from-blue-200 via-blue-600 to-blue-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
+								className="px-3  py-3 bg-gradient-to-br from-blue-200 via-blue-600 to-blue-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
 							>
 								LinkedIn
 							</li>
@@ -106,16 +106,30 @@ function App() {
 			</h1>
 			<Portfolio />
 
-			<p className="text-yellow-300">This site was last updated on Monday, Nov 18th, 2024.</p>
+			<p className="text-yellow-300 mt-5">
+				This site was last updated on Wednesday, Dec 18th, 2024.
+			</p>
 
-			<p className="read-the-docs">This site was built with Vite React</p>
-			<p className="underline">Build your own site with rEact</p>
-			<p className="read-the-docs">
-				This page is hosted on [GITHUB] Create your own{" "}
-				<span className="underline">Free Home Page</span>
+			<p className="text-red-600 font-semibold">
+				This page is hosted by
+				{/* <img src="./images/" className="m-0" /> */}
+				{""}
+				<span
+					className="text-green-400 hover:underline hover:font-bold"
+					onClick={() => window.open("https://pages.github.com/", "_blank")}
+				>
+					{" "}
+					[GithubPages]
+				</span>{" "}
+				Get your own{" "}
+				<span
+					className="underline text-green-400 font-bold"
+					onClick={() => window.open("https://vite.dev/guide/", "_blank")}
+				>
+					Free Vite React App
+				</span>
 			</p>
 		</div>
 	);
 }
-
 export default App;

@@ -14,6 +14,9 @@ export default function about() {
 				</div>
 				<img src={chi} className="h-96" />
 			</div>
+			<div>
+				<p>FILLER</p>
+			</div>
 		</div>
 	);
 }
