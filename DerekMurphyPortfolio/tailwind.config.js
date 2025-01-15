@@ -3,6 +3,9 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				display: ["Sofia Sans Extra Condensed", "serif"],
+			},
 			keyframes: {
 				refine: {
 					"0%": {
