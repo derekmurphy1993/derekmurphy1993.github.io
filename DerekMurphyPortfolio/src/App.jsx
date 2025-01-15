@@ -7,7 +7,7 @@ import "./App.css";
 import Header from "./pages/header";
 import MHeader from "./pages/m_header";
 import Mabout from "./pages/m_about";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 
 function App() {
 	const [modern, setModern] = useState(false);
@@ -88,7 +88,7 @@ function App() {
 								>
 									bork, CLICK HERE
 								</p> */}
-								<ul className="flex flex-row gap-4 font-bold mt-6 justify-center items-center">
+								<ul className="flex flex-row gap-4 font-bold mt-40 justify-center items-center">
 									<li
 										onClick={() => scrollToElement("about")}
 										className=" text-white drop-shadow-md hover:text-slate-400"
@@ -114,6 +114,17 @@ function App() {
 									<li
 										onClick={() =>
 											window.open(
+												"https://www.linkedin.com/in/derekmurphy93/",
+												"_blank"
+											)
+										}
+										className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
+									>
+										<FaLinkedin className="p-[2px] h-10 w-10" />
+									</li>
+									<li
+										onClick={() =>
+											window.open(
 												"https://github.com/derekmurphy1993",
 												"_blank"
 											)
@@ -125,13 +136,13 @@ function App() {
 									<li
 										onClick={() =>
 											window.open(
-												"https://www.linkedin.com/in/derekmurphy93/",
+												"https://medium.com/@derekmurphy1993",
 												"_blank"
 											)
 										}
 										className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
 									>
-										<FaLinkedin className="p-[2px] h-10 w-10" />
+										<FaMedium className="p-[2px] h-10 w-10" />
 									</li>
 								</ul>
 							</div>
@@ -187,7 +198,41 @@ function App() {
 						</p>
 					</div>
 				) : (
-					<div className="bg-[#d3f86b] h-4"></div>
+					<div className="bg-[#d3f86b] text-slate-950">
+						<ul className="flex flex-row gap-2 py-1 justify-center items-center">
+							<li className="text-xs font-semibold">
+								© 2025, Derek Murphy. All Rights Reserved.{" "}
+							</li>
+							<li
+								onClick={() =>
+									window.open(
+										"https://www.linkedin.com/in/derekmurphy93/",
+										"_blank"
+									)
+								}
+								className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
+							>
+								<FaLinkedin className="h-6 w-6" />
+							</li>
+							<li
+								onClick={() =>
+									window.open("https://github.com/derekmurphy1993", "_blank")
+								}
+								className="bg-[#5151e5] rounded-full text-black drop-shadow-md  hover:bg-slate-400"
+							>
+								<FaGithub className=" h-6 w-6" />
+							</li>
+
+							<li
+								onClick={() =>
+									window.open("https://medium.com/@derekmurphy1993", "_blank")
+								}
+								className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
+							>
+								<FaMedium className="h-6 w-6" />
+							</li>
+						</ul>
+					</div>
 				)}
 			</div>
 		</div>

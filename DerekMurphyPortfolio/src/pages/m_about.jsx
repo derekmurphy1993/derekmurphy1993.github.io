@@ -4,8 +4,10 @@ export default function Mabout() {
 			<div className="absolute inset-0 opacity-80 grid grid-cols-3 grid-rows-3 gap-4 mt-40 max-[1250px]:hidden">
 				<div className=""></div>
 				<div className=""></div>
-				<div className="blur-sm bg-gradient-to-br  from-[#5151e5]/40 to-[#5151e5] rounded-full w-8 h-8"></div>
-				<div className="blur-md bg-gradient-to-br  from-[#5151e5]/40 to-[#5151e5] rounded-full w-20 h-20"></div>
+				{/* <div className="blur-sm bg-gradient-to-br  from-[#5151e5]/40 to-[#5151e5] rounded-full w-8 h-8"></div>
+				<div className="blur-md bg-gradient-to-br  from-[#5151e5]/40 to-[#5151e5] rounded-full w-20 h-20"></div> */}
+				<div className=""></div>
+				<div className=""></div>
 
 				<div className=""></div>
 				<div className="blur-lg bg-gradient-to-br  from-[#5151e5]/40 to-[#5151e5] rounded-full w-52 h-52"></div>

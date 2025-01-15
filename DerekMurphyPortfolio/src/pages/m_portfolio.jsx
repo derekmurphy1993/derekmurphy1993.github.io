@@ -7,13 +7,11 @@ export default function MPortfolio() {
 	return (
 		<div className="flex flex-col max-w-screen-xl mx-auto gap-14 my-12 pb-36">
 			<div
-				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0"
+				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
 				onClick={() => window.open("https://mern-rapidrentals.onrender.com/")}
 			>
 				<div className="text-left">
-					<h1 className="font-display  text-gray-100 font-bold text-4xl">
-						RAPID RENTALS
-					</h1>
+					<h1 className="font-display  font-bold text-4xl">RAPID RENTALS</h1>
 					<p className="font-display text-xl">Software Dev, MERN</p>
 				</div>
 				<div className="w-8/12 h-52 overflow-hidden p-5 ">
@@ -22,7 +20,7 @@ export default function MPortfolio() {
 			</div>
 
 			<div
-				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0"
+				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
 				onClick={() => window.open("https://layoutfast.se.com/")}
 			>
 				{" "}
@@ -30,20 +28,18 @@ export default function MPortfolio() {
 					<img className="" src={SE} />
 				</div>
 				<div className="text-left">
-					<h1 className="font-display  text-gray-100 font-bold text-4xl">
-						SCHNIDER ELECTRIC
-					</h1>
+					<h1 className="font-display   font-bold text-4xl">SCHNIDER ELECTRIC</h1>
 					<p className="font-display text-xl">Front End Developer, React + JS</p>
 				</div>
 			</div>
 
 			<div
-				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0"
+				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
 				onClick={() => window.open("https://mern-rapidrentals.onrender.com/")}
 			>
 				{" "}
 				<div className="text-left">
-					<h1 className="font-display  text-gray-100 font-bold text-4xl">CIVIC APP</h1>
+					<h1 className="font-display  font-bold text-4xl">CIVIC APP</h1>
 					<p className="font-display text-xl">Software Dev, React + Google Maps API</p>
 				</div>
 				<div className="w-8/12 h-52 overflow-hidden p-5">
