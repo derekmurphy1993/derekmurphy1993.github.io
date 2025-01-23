@@ -35,7 +35,11 @@ export default function MPortfolio() {
 
 			<div
 				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
-				onClick={() => window.open("https://mern-rapidrentals.onrender.com/")}
+				onClick={() =>
+					window.open(
+						"https://medium.com/@derekmurphy1993/civic-app-retrospective-75321a9ebd7c"
+					)
+				}
 			>
 				{" "}
 				<div className="text-left">
