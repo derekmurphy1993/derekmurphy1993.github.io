@@ -5,7 +5,7 @@ import MPortfolio from "./pages/m_portfolio";
 import About from "./pages/about";
 import "./App.css";
 import Header from "./pages/header";
-import MHeader from "./pages/m_header";
+import MHeader from "./pages/new_header";
 import Mabout from "./pages/m_about";
 import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 
@@ -35,7 +35,8 @@ function App() {
 									className="mt-10 text-2xl text-orange-600 font-semibold underline"
 								>
 									{" "}
-									If you would prefer a more modern webpage expierence, CLICK HERE{" "}
+									If you would prefer a more modern webpage expierence, CLICK
+									HERE{" "}
 								</p>
 								<ul className="flex flex-row gap-8 font-bold mt-6 justify-center items-center">
 									<li
@@ -54,7 +55,7 @@ function App() {
 										onClick={() =>
 											window.open(
 												"https://github.com/derekmurphy1993",
-												"_blank"
+												"_blank",
 											)
 										}
 										className="px-3 py-3 bg-gradient-to-br from-green-200 via-green-600 to-green-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
@@ -65,7 +66,7 @@ function App() {
 										onClick={() =>
 											window.open(
 												"https://www.linkedin.com/in/derekmurphy93/",
-												"_blank"
+												"_blank",
 											)
 										}
 										className="px-3  py-3 bg-gradient-to-br from-blue-200 via-blue-600 to-blue-900 rounded-full text-white drop-shadow-md hover:underline hover:bg-opacity-90"
@@ -115,7 +116,7 @@ function App() {
 										onClick={() =>
 											window.open(
 												"https://www.linkedin.com/in/derekmurphy93/",
-												"_blank"
+												"_blank",
 											)
 										}
 										className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
@@ -126,7 +127,7 @@ function App() {
 										onClick={() =>
 											window.open(
 												"https://github.com/derekmurphy1993",
-												"_blank"
+												"_blank",
 											)
 										}
 										className="bg-[#5151e5] rounded-full text-black drop-shadow-md  hover:bg-slate-400"
@@ -137,7 +138,7 @@ function App() {
 										onClick={() =>
 											window.open(
 												"https://medium.com/@derekmurphy1993",
-												"_blank"
+												"_blank",
 											)
 										}
 										className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
@@ -174,7 +175,7 @@ function App() {
 				{modern ? (
 					<div>
 						<p className="text-yellow-300 mt-5">
-							This site was last updated on Wednesday, Dec 18th, 2024.
+							This site was last updated on Wednesday, May 11th, 1993.
 						</p>
 
 						<p className="text-red-600 font-semibold">
@@ -207,7 +208,7 @@ function App() {
 								onClick={() =>
 									window.open(
 										"https://www.linkedin.com/in/derekmurphy93/",
-										"_blank"
+										"_blank",
 									)
 								}
 								className="bg-[#5151e5] text-black drop-shadow-md  hover:bg-slate-400"
