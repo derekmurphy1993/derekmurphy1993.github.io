@@ -1,23 +1,25 @@
 /* eslint-disable react/no-unknown-property */
 import { useRef } from "react";
 import { RigidBody } from "@react-three/rapier";
-import { Euler } from "three";
+import {
+	BOARD_DEPTH,
+	BOARD_FRAME_THICKNESS,
+	BOARD_HEIGHT,
+	BOARD_POSITION,
+	BOARD_ROTATION,
+	BOARD_WIDTH,
+	NUM_RIBS,
+	getRibLocalY,
+} from "./boardConfig";
 
 export default function Board() {
 	const boardRef = useRef(null);
 
-	// Board dimensions
-	const boardWidth = 8;
-	const boardHeight = 6;
-	const boardDepth = 0.1;
-	const frameThickness = 0.2;
-
-	// Board rotation - upright facing camera
-	const boardRotation = new Euler(-Math.PI / 1, -0.05, 0);
-
-	// Calculate 8 evenly spaced horizontal lines
-	const numLines = 8;
-	const lineSpacing = boardHeight / (numLines + 1);
+	const boardWidth = BOARD_WIDTH;
+	const boardHeight = BOARD_HEIGHT;
+	const boardDepth = BOARD_DEPTH;
+	const frameThickness = BOARD_FRAME_THICKNESS;
+	const boardRotation = BOARD_ROTATION;
 
 	return (
 		<group>
@@ -25,14 +27,12 @@ export default function Board() {
 			<group rotation={boardRotation} position={[0, 0.5, 4.5]}>
 				{/* Top frame */}
 				<mesh position={[0, 0, 0]} castShadow receiveShadow>
-					<boxGeometry
-						args={[boardWidth + frameThickness * 2, frameThickness, frameThickness]}
-					/>
+					<boxGeometry args={[0, frameThickness, frameThickness]} />
 					<meshStandardMaterial color="#2d1810" roughness={0.8} />
 				</mesh>
 
 				{/* Bottom frame */}
-				<mesh position={[0, -boardHeight - frameThickness, 0]} castShadow receiveShadow>
+				<mesh position={[0, boardHeight + frameThickness, 0]} castShadow receiveShadow>
 					<boxGeometry
 						args={[boardWidth + frameThickness * 2, frameThickness, frameThickness]}
 					/>
@@ -43,7 +43,7 @@ export default function Board() {
 				<mesh
 					position={[
 						-boardWidth / 2 - frameThickness / 2,
-						-boardHeight / 2 - frameThickness / 2,
+						boardHeight / 2 - frameThickness / 2,
 						0,
 					]}
 					castShadow
@@ -59,7 +59,7 @@ export default function Board() {
 				<mesh
 					position={[
 						boardWidth / 2 + frameThickness / 2,
-						-boardHeight / 2 - frameThickness / 2,
+						boardHeight / 2 - frameThickness / 2,
 						0,
 					]}
 					castShadow
@@ -76,19 +76,22 @@ export default function Board() {
 				<mesh
 					ref={boardRef}
 					rotation={boardRotation}
-					position={[0, boardHeight / 2 + 0.6, 4.5]}
+					position={BOARD_POSITION.toArray()}
 					receiveShadow
 					castShadow
 				>
-					<boxGeometry args={[boardWidth, boardHeight, boardDepth]} />
+					<boxGeometry args={[boardWidth, -boardHeight, boardDepth]} />
 					<meshStandardMaterial color="#1a1a1a" roughness={0.9} metalness={0.0} />
 				</mesh>
 			</RigidBody>
 			{/* Horizontal rib lines (8 lines) */}
 
-			<group rotation={boardRotation} position={[0, 0.5, 4.6]}>
-				{Array.from({ length: numLines }, (_, index) => {
-					const lineY = -(index + 1) * lineSpacing;
+			<group
+				rotation={boardRotation}
+				position={[BOARD_POSITION.x, BOARD_POSITION.y, BOARD_POSITION.z + 0.051]}
+			>
+				{Array.from({ length: NUM_RIBS }, (_, index) => {
+					const lineY = getRibLocalY(index);
 					return (
 						<mesh key={index} position={[0, lineY, 0.0]}>
 							<planeGeometry args={[boardWidth, 0.02]} />
@@ -103,7 +106,7 @@ export default function Board() {
 				})}
 			</group>
 			{/* Easel support - two small legs */}
-			<group position={[0, 0.4, 4.4]}>
+			<group position={[0, -0.4, 4.4]}>
 				{/* Left leg */}
 				<mesh
 					rotation={[0, 0, Math.PI / 6]}

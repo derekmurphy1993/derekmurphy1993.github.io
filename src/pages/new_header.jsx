@@ -1,17 +1,19 @@
 /* eslint-disable react/no-unknown-property */
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Physics } from "@react-three/rapier";
+import { CuboidCollider, Physics, RigidBody } from "@react-three/rapier";
 import { OrbitControls } from "@react-three/drei";
 import Board from "./Board";
 import Letter from "./Letter";
 
 export default function M_Header() {
+	const [isDraggingLetter, setIsDraggingLetter] = useState(false);
+
 	return (
 		<div className="w-full h-screen bg-slate-400">
 			<Canvas
 				shadows
-				camera={{ position: [-1, 0, 15], fov: 50 }}
+				camera={{ position: [-2, 4, 15], fov: 60 }}
 				style={{ width: "100%", height: "100%" }}
 			>
 				<Suspense fallback={null}>
@@ -28,23 +30,31 @@ export default function M_Header() {
 						<directionalLight position={[-5, 5, 3]} intensity={0} />
 
 						{/* Floor/Countertop - dark wood */}
-						<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 5]} receiveShadow>
-							<planeGeometry args={[120, 20]} />
-							<meshStandardMaterial color="#3d2817" roughness={0.7} />
-						</mesh>
+						<RigidBody type="fixed" colliders="cuboid">
+							<mesh
+								rotation={[-Math.PI / 2, 0, 0]}
+								position={[0, 0, 5]}
+								receiveShadow
+							>
+								<planeGeometry args={[120, 20]} />
+								<meshStandardMaterial color="#3d2817" roughness={0.7} />
+							</mesh>
+							<CuboidCollider args={[60, 0.05, 10]} position={[0, -0.05, 5]} />
+						</RigidBody>
 
 						{/* Board */}
 						<Board />
-						<Letter />
+						<Letter onDragStateChange={setIsDraggingLetter} />
 					</Physics>
 				</Suspense>
 
 				{/* Camera controls */}
 				<OrbitControls
+					enabled={true}
 					enablePan={true}
-					enableZoom={true}
+					enableZoom={false}
 					enableRotate={true}
-					minDistance={14}
+					minDistance={30}
 					maxDistance={30}
 					minPolarAngle={Math.PI / 2.5}
 					maxPolarAngle={Math.PI / 2.5}
