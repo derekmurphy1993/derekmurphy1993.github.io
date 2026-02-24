@@ -24,7 +24,7 @@ function App() {
 				<div className="flex flex-col h-screen">
 					{modern ? <Header /> : <MHeader />}
 
-					{modern ? (
+					{/* {modern ? (
 						<div className="w-full flex flex-row mt-10">
 							<div className="w-3/12">
 								<img src={dove} />
@@ -88,7 +88,7 @@ function App() {
 									className="mt-10 text-2xl text-orange-600 font-semibold underline"
 								>
 									bork, CLICK HERE
-								</p> */}
+								</p> }
 								<ul className="flex flex-row gap-4 font-bold mt-40 justify-center items-center">
 									<li
 										onClick={() => scrollToElement("about")}
@@ -149,7 +149,7 @@ function App() {
 							</div>
 							<div className="w-3/12 scale-x-[-1]"></div>
 						</div>
-					)}
+					)} */}
 				</div>
 
 				<div
