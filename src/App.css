@@ -1,5 +1,5 @@
 #root {
-	margin: 0 auto;
+	margin: 0;
 	background-image: url("../src/assets/stars_bg.jpg");
 	text-align: center;
 }
@@ -38,4 +38,178 @@
 
 .read-the-docs {
 	color: #888;
+}
+
+@keyframes portfolio-window-in {
+	from {
+		opacity: 0;
+		transform: translateY(20px) scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+.portfolio-window-stagger {
+	opacity: 0;
+	animation: portfolio-window-in 520ms ease-out forwards;
+}
+
+.portfolio-compact {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+	position: relative;
+	height: 160px;
+	overflow: hidden;
+	padding-bottom: 0;
+}
+
+.portfolio-window-slot {
+	height: 68px;
+	margin-top: 4px;
+	overflow: visible;
+}
+
+.portfolio-compact .portfolio-window-slot {
+	position: absolute;
+	top: 10px;
+	width: 360px;
+	height: 130px;
+	margin-top: 0;
+	overflow: visible;
+}
+
+.portfolio-compact .portfolio-window {
+	transform: scale(0.42);
+	transform-origin: top left;
+	margin-top: 0;
+}
+
+@keyframes portfolio-carousel-move {
+	from {
+		transform: translateX(100vw);
+	}
+	to {
+		transform: translateX(-380px);
+	}
+}
+
+.portfolio-compact .carousel-item {
+	animation: portfolio-carousel-move 36s linear infinite;
+}
+
+.portfolio-compact .carousel-item-1 {
+	animation-delay: 0s;
+}
+
+.portfolio-compact .carousel-item-2 {
+	animation-delay: -6.4s;
+}
+
+.portfolio-compact .carousel-item-3 {
+	animation-delay: -12.8s;
+}
+
+.portfolio-compact .carousel-item-4 {
+	animation-delay: -19.2s;
+}
+
+.portfolio-compact .carousel-item-5 {
+	animation-delay: -25.6s;
+}
+
+.portfolio-compact .portfolio-window-stagger {
+	animation-duration: 420ms;
+}
+
+.portfolio-screensaver {
+	position: relative;
+	height: 360px;
+	overflow: hidden;
+}
+
+.portfolio-overlay-screensaver {
+	position: absolute;
+	inset: 0;
+	z-index: 40;
+	pointer-events: none;
+}
+
+.portfolio-screensaver .portfolio-window-slot {
+	position: absolute;
+	width: 185px;
+	height: 74px;
+	margin-top: 0;
+	overflow: visible;
+	left: 0;
+	top: 0;
+}
+
+.portfolio-screensaver .portfolio-window {
+	transform: scale(0.22);
+	transform-origin: top left;
+	margin-top: 0;
+}
+
+.portfolio-overlay-screensaver .portfolio-window {
+	pointer-events: auto;
+}
+
+@keyframes screensaver-path-1 {
+	0% { transform: translate(2vw, 8vh); }
+	25% { transform: translate(75vw, 10vh); }
+	50% { transform: translate(74vw, 74vh); }
+	75% { transform: translate(6vw, 72vh); }
+	100% { transform: translate(2vw, 8vh); }
+}
+
+@keyframes screensaver-path-2 {
+	0% { transform: translate(78vw, 18vh); }
+	25% { transform: translate(8vw, 24vh); }
+	50% { transform: translate(12vw, 76vh); }
+	75% { transform: translate(70vw, 64vh); }
+	100% { transform: translate(78vw, 18vh); }
+}
+
+@keyframes screensaver-path-3 {
+	0% { transform: translate(16vw, 74vh); }
+	30% { transform: translate(68vw, 8vh); }
+	60% { transform: translate(10vw, 12vh); }
+	100% { transform: translate(16vw, 74vh); }
+}
+
+@keyframes screensaver-path-4 {
+	0% { transform: translate(64vw, 70vh); }
+	25% { transform: translate(14vw, 56vh); }
+	55% { transform: translate(72vw, 20vh); }
+	100% { transform: translate(64vw, 70vh); }
+}
+
+@keyframes screensaver-path-5 {
+	0% { transform: translate(38vw, 10vh); }
+	25% { transform: translate(8vw, 66vh); }
+	65% { transform: translate(76vw, 58vh); }
+	100% { transform: translate(38vw, 10vh); }
+}
+
+.portfolio-screensaver .screensaver-path-1 {
+	animation: screensaver-path-1 12s linear infinite;
+}
+
+.portfolio-screensaver .screensaver-path-2 {
+	animation: screensaver-path-2 10.5s linear infinite;
+}
+
+.portfolio-screensaver .screensaver-path-3 {
+	animation: screensaver-path-3 11.3s linear infinite;
+}
+
+.portfolio-screensaver .screensaver-path-4 {
+	animation: screensaver-path-4 9.8s linear infinite;
+}
+
+.portfolio-screensaver .screensaver-path-5 {
+	animation: screensaver-path-5 10.9s linear infinite;
 }
