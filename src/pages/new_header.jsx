@@ -60,7 +60,7 @@ export default function NewHeader() {
 			title: "MBTA StopWatch",
 			role: "Realtime Transit App",
 			description:
-				"Built a realtime transit experience focused on quick route visibility and smooth daily commuting.",
+				"Built a realtime transit experience focused on minute by minute commuting.",
 			image: mbtaImage,
 			tech: ["javascript", "react"],
 			siteUrl: "https://mbta-stopwatchh.onrender.com/",
@@ -99,7 +99,7 @@ export default function NewHeader() {
 	];
 	const scrollToSection = (event, id) => {
 		event.preventDefault();
-		trackEvent("nav_section_click", id);
+				trackEvent("nav_section_click", id);
 		const section = document.getElementById(id);
 		if (!section) return;
 
@@ -126,7 +126,7 @@ export default function NewHeader() {
 
 	const returnToSplash = (event) => {
 		event.preventDefault();
-		trackEvent("return_to_splash_click");
+				trackEvent("return_to_splash_click");
 		document.cookie = "skip_splash=; path=/; max-age=0; samesite=lax";
 		window.location.reload();
 	};
@@ -223,7 +223,7 @@ export default function NewHeader() {
 								target="_blank"
 								rel="noreferrer"
 								aria-label="GitHub"
-								onClick={() => trackEvent("hero_social_click", "github")}
+																onClick={() => trackEvent("hero_social_click", "github")}
 							>
 								<FaGithub className="text-gray-200 hover:text-blue-500 hover:scale-125" />
 							</a>
@@ -232,7 +232,8 @@ export default function NewHeader() {
 								target="_blank"
 								rel="noreferrer"
 								aria-label="LinkedIn"
-								onClick={() => trackEvent("hero_social_click", "linkedin")}
+																onClick={() => trackEvent("hero_social_click", "linkedin")}
+
 							>
 								<FaLinkedin className="text-gray-200 hover:text-blue-500 hover:scale-125" />
 							</a>
@@ -241,7 +242,8 @@ export default function NewHeader() {
 								target="_blank"
 								rel="noreferrer"
 								aria-label="Medium"
-								onClick={() => trackEvent("hero_social_click", "medium")}
+																onClick={() => trackEvent("hero_social_click", "medium")}
+
 							>
 								<FaMedium className="text-gray-200 hover:text-blue-500 hover:scale-125" />
 							</a>
@@ -370,7 +372,8 @@ export default function NewHeader() {
 							<span>Email</span>
 							<a
 								href="mailto:derekmurphy1993@gmail.com"
-								onClick={() => trackEvent("contact_email_click")}
+																onClick={() => trackEvent("contact_email_click")}
+
 								className="text-blue-400 hover:underline"
 							>
 								derekmurphy1993@gmail.com
@@ -380,7 +383,8 @@ export default function NewHeader() {
 							href="https://github.com/derekmurphy1993"
 							target="_blank"
 							rel="noreferrer"
-							onClick={() => trackEvent("contact_social_click", "github")}
+														onClick={() => trackEvent("contact_social_click", "github")}
+
 							className="flex items-center gap-3 text-gray-200 hover:text-blue-400"
 						>
 							<FaGithub className="text-xl" />
@@ -395,7 +399,8 @@ export default function NewHeader() {
 							href="https://medium.com/@derekmurphy1993"
 							target="_blank"
 							rel="noreferrer"
-							onClick={() => trackEvent("contact_social_click", "medium")}
+														onClick={() => trackEvent("contact_social_click", "medium")}
+
 							className="flex items-center gap-3 text-gray-200 hover:text-blue-400"
 						>
 							<FaMedium className="text-xl" />
@@ -410,7 +415,7 @@ export default function NewHeader() {
 							href="https://www.linkedin.com/in/derekmurphy93/"
 							target="_blank"
 							rel="noreferrer"
-							onClick={() => trackEvent("contact_social_click", "linkedin")}
+														onClick={() => trackEvent("contact_social_click", "linkedin")}
 							className="flex items-center gap-3 text-gray-200 hover:text-blue-400"
 						>
 							<FaLinkedin className="text-xl" />
