@@ -3,6 +3,12 @@ import SE from "../assets/port/SEModernImage.jpg";
 import RR from "../assets/port/RapidRentalModernImage.jpg";
 import CIV from "../assets/port/Civic.jpg";
 import MBTA from "../assets/port/train.png";
+import { trackEvent } from "../lib/analytics";
+
+function openLiveSite(url, projectTitle) {
+	trackEvent("project_live_site_click", projectTitle);
+	window.open(url);
+}
 
 export default function MPortfolio() {
 	return (
@@ -10,7 +16,7 @@ export default function MPortfolio() {
 			{/* SE port */}
 			<div
 				className="flex flex-row gap-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
-				onClick={() => window.open("https://layoutfast.se.com/")}
+				onClick={() => openLiveSite("https://layoutfast.se.com/", "Schneider Electric")}
 			>
 				{" "}
 				<div className="w-8/12 h-52 overflow-hidden p-5">
@@ -44,7 +50,7 @@ export default function MPortfolio() {
 
 			<div
 				className="flex flex-row gap-2 ml-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
-				onClick={() => window.open("https://mbta-stopwatchh.onrender.com/")}
+				onClick={() => openLiveSite("https://mbta-stopwatchh.onrender.com/", "MBTA StopWatch")}
 			>
 				<div className="text-left">
 					<h1 className="font-display font-bold text-4xl">MBTA StopWatch</h1>
@@ -115,7 +121,7 @@ export default function MPortfolio() {
 
 			<div
 				className="flex flex-row gap-2 ml-2 items-center grayscale hover:grayscale-0  text-gray-100 hover:text-[#d3f86b]/80"
-				onClick={() => window.open("https://mern-rapidrentals.onrender.com/")}
+				onClick={() => openLiveSite("https://mern-rapidrentals.onrender.com/", "Rapid Rentals")}
 			>
 				<div className="text-left">
 					<h1 className="font-display font-bold text-4xl">RAPID RENTALS</h1>

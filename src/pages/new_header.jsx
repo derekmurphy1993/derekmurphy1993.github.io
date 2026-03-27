@@ -97,6 +97,23 @@ export default function NewHeader() {
 			repoUrl: "https://github.com/derekmurphy1993/MERN_Proj",
 		},
 	];
+
+	const handleProjectCardClick = (title) => {
+		trackEvent("project_card_click", title);
+	};
+
+	const handleHeroSocialClick = (platform) => {
+		trackEvent("hero_social_click", platform);
+	};
+
+	const handleContactSocialClick = (platform) => {
+		trackEvent("contact_social_click", platform);
+	};
+
+	const handleResumeDownload = () => {
+		trackEvent("resume_download", "contact_section");
+	};
+
 	const scrollToSection = (event, id) => {
 		event.preventDefault();
 		trackEvent("nav_section_click", id);
@@ -223,7 +240,7 @@ export default function NewHeader() {
 								target="_blank"
 								rel="noreferrer"
 								aria-label="GitHub"
-								onClick={() => trackEvent("hero_social_click", "github")}
+								onClick={() => handleHeroSocialClick("github")}
 							>
 								<FaGithub className="text-gray-200 hover:text-blue-500 hover:scale-125" />
 							</a>
@@ -232,7 +249,7 @@ export default function NewHeader() {
 								target="_blank"
 								rel="noreferrer"
 								aria-label="LinkedIn"
-								onClick={() => trackEvent("hero_social_click", "linkedin")}
+								onClick={() => handleHeroSocialClick("linkedin")}
 							>
 								<FaLinkedin className="text-gray-200 hover:text-blue-500 hover:scale-125" />
 							</a>
@@ -241,7 +258,7 @@ export default function NewHeader() {
 								target="_blank"
 								rel="noreferrer"
 								aria-label="Medium"
-								onClick={() => trackEvent("hero_social_click", "medium")}
+								onClick={() => handleHeroSocialClick("medium")}
 							>
 								<FaMedium className="text-gray-200 hover:text-blue-500 hover:scale-125" />
 							</a>
@@ -352,7 +369,12 @@ export default function NewHeader() {
 					</h2>
 					<div className="grid gap-6 md:grid-cols-2">
 						{projects.map((project) => (
-							<ProjectCard key={project.title} {...project} />
+							<div
+								key={project.title}
+								onClickCapture={() => handleProjectCardClick(project.title)}
+							>
+								<ProjectCard {...project} />
+							</div>
 						))}
 					</div>
 				</div>
@@ -380,7 +402,7 @@ export default function NewHeader() {
 							href="https://github.com/derekmurphy1993"
 							target="_blank"
 							rel="noreferrer"
-							onClick={() => trackEvent("contact_social_click", "github")}
+							onClick={() => handleContactSocialClick("github")}
 							className="flex items-center gap-3 text-gray-200 hover:text-blue-400"
 						>
 							<FaGithub className="text-xl" />
@@ -395,7 +417,7 @@ export default function NewHeader() {
 							href="https://medium.com/@derekmurphy1993"
 							target="_blank"
 							rel="noreferrer"
-							onClick={() => trackEvent("contact_social_click", "medium")}
+							onClick={() => handleContactSocialClick("medium")}
 							className="flex items-center gap-3 text-gray-200 hover:text-blue-400"
 						>
 							<FaMedium className="text-xl" />
@@ -410,7 +432,7 @@ export default function NewHeader() {
 							href="https://www.linkedin.com/in/derekmurphy93/"
 							target="_blank"
 							rel="noreferrer"
-							onClick={() => trackEvent("contact_social_click", "linkedin")}
+							onClick={() => handleContactSocialClick("linkedin")}
 							className="flex items-center gap-3 text-gray-200 hover:text-blue-400"
 						>
 							<FaLinkedin className="text-xl" />
@@ -426,7 +448,7 @@ export default function NewHeader() {
 						<a
 							href="/DerekMurphy_Resume.pdf"
 							download
-							onClick={() => trackEvent("resume_download", "contact_section")}
+							onClick={handleResumeDownload}
 							className="inline-block rounded border border-blue-400/70 px-4 py-2 text-sm font-semibold text-gray-200 hover:bg-blue-500 hover:text-zinc-900"
 						>
 							Download Resume
