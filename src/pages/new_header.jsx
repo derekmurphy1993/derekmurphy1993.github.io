@@ -67,6 +67,16 @@ export default function NewHeader() {
 			repoUrl: "https://github.com/derekmurphy1993/MBTA-StopWatch-Chrome",
 		},
 		{
+			title: "Civic App",
+			role: "Front End Engineer",
+			description:
+				"Created a community-focused browser app using location context to connect people with nearby events.",
+			image: civicImage,
+			tech: ["javascript", "react", "node"],
+			siteUrl: "https://civicclone.onrender.com/",
+			blogUrl: "https://medium.com/@derekmurphy1993/civic-app-retrospective-75321a9ebd7c",
+		},
+		{
 			title: "LayoutFast",
 			role: "FE Software Engineer, LayoutFast",
 			description:
@@ -76,15 +86,6 @@ export default function NewHeader() {
 			siteUrl: "https://layoutfast.se.com/",
 			blogUrl:
 				"https://medium.com/@derekmurphy1993/schneider-electric-retrospective-b04124efb5e5",
-		},
-		{
-			title: "Civic App",
-			role: "Front End Engineer",
-			description:
-				"Created a community-focused browser app using location context to connect people with nearby events.",
-			image: civicImage,
-			tech: ["javascript", "react", "node"],
-			blogUrl: "https://medium.com/@derekmurphy1993/civic-app-retrospective-75321a9ebd7c",
 		},
 		{
 			title: "Rapid Rentals",

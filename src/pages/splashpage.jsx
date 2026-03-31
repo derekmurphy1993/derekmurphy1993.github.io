@@ -8,8 +8,14 @@ import civic from "../assets/gifs/politics.gif";
 import civic2 from "../assets/gifs/flaganimation.gif";
 import mbta from "../assets/gifs/train_stm.gif";
 import dream from "../assets/gifs/genie.gif";
+import { trackEvent } from "../lib/analytics";
 
 export default function SplashPage({ onEnter }) {
+	const openExternal = (url, label) => {
+		trackEvent("splash_link_click", label);
+		window.open(url);
+	};
+
 	return (
 		<div
 			className="w-screen max-w-full h-screen overflow-hidden text-[#f8ee7d]"
@@ -151,7 +157,9 @@ export default function SplashPage({ onEnter }) {
 
 								<div className="absolute flex w-full bottom-14 justify-center">
 									<div
-										onClick={() => window.open("https://layoutfast.se.com/")}
+										onClick={() =>
+											openExternal("https://layoutfast.se.com/", "layoutfast_site")
+										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
 									>
 										<p className="border-dashed border-2 border-slate-950 p-2">
@@ -159,7 +167,9 @@ export default function SplashPage({ onEnter }) {
 										</p>
 									</div>
 									<div
-										onClick={() => window.open("https://layoutfast.se.com/")}
+										onClick={() =>
+											openExternal("https://layoutfast.se.com/", "layoutfast_blog")
+										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
 									>
 										<p className="border-dashed border-2 border-slate-950 p-2">
@@ -197,7 +207,10 @@ export default function SplashPage({ onEnter }) {
 								<div className="absolute flex w-full bottom-14 justify-center">
 									<div
 										onClick={() =>
-											window.open("https://mern-rapidrentals.onrender.com/")
+											openExternal(
+												"https://mern-rapidrentals.onrender.com/",
+												"rapid_rentals_site",
+											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
 									>
@@ -207,8 +220,9 @@ export default function SplashPage({ onEnter }) {
 									</div>
 									<div
 										onClick={() =>
-											window.open(
+											openExternal(
 												"https://github.com/derekmurphy1993/MERN_Proj",
+												"rapid_rentals_github",
 											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
@@ -249,7 +263,10 @@ export default function SplashPage({ onEnter }) {
 								<div className="absolute flex w-full bottom-14 justify-center">
 									<div
 										onClick={() =>
-											window.open("https://mern-rapidrentals.onrender.com/")
+											openExternal(
+												"https://civicclone.onrender.com/",
+												"civic_app_site",
+											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
 									>
@@ -259,8 +276,9 @@ export default function SplashPage({ onEnter }) {
 									</div>
 									<div
 										onClick={() =>
-											window.open(
+											openExternal(
 												"https://github.com/derekmurphy1993/MERN_Proj",
+												"civic_app_github",
 											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
@@ -301,7 +319,10 @@ export default function SplashPage({ onEnter }) {
 								<div className="absolute flex w-full bottom-14 justify-center">
 									<div
 										onClick={() =>
-											window.open("https://mbta-stopwatchh.onrender.com/")
+											openExternal(
+												"https://mbta-stopwatchh.onrender.com/",
+												"mbta_stopwatch_site",
+											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
 									>
@@ -311,8 +332,9 @@ export default function SplashPage({ onEnter }) {
 									</div>
 									<div
 										onClick={() =>
-											window.open(
+											openExternal(
 												"https://github.com/derekmurphy1993/MBTA-StopWatch-Chrome",
+												"mbta_stopwatch_github",
 											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
@@ -352,7 +374,10 @@ export default function SplashPage({ onEnter }) {
 								<div className="absolute flex w-full bottom-14 justify-center">
 									<div
 										onClick={() =>
-											window.open("https://mealplanner-topaz.vercel.app/")
+											openExternal(
+												"https://mealplanner-topaz.vercel.app/",
+												"macroplanner_site",
+											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
 									>
@@ -362,8 +387,9 @@ export default function SplashPage({ onEnter }) {
 									</div>
 									<div
 										onClick={() =>
-											window.open(
+											openExternal(
 												"https://github.com/derekmurphy1993/mealplanner",
+												"macroplanner_github",
 											)
 										}
 										className="mx-10 h-[52px] text-slate-900 text-center align-middle hover:bg-[#bdb9b2] bg-[#cecac2] border-4 border-b-[#5e5d59] border-r-[#5e5d59] border-[#f8fbee] hover:border-[#5e5d59] hover:border-b-[#f8fbee] hover:border-r-[#f8fbee]"
